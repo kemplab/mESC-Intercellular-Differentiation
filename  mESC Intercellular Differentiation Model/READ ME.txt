@@ -1,0 +1,47 @@
+
+## Run a simulation 
+
+First, you need to set a path to a (preferably empty) folder for Simulations to save to. This path can be set in Model_run. 
+
+That is all you should need before starting that Script and a simulation will begin. 
+
+
+## Parameters 
+
+In terms of parameters that you can modify, most are contained within the 'Model_initialParameters' file. 
+
+
+For the intercellular diffusion there are:
+
+**The N, Y, and Pmax terms were arbitrary diffusion values that interact with the Base permeability term (5).
+**These terms become more significant when considering multiple diffusing molecules and multiple Cx isoforms, which isn't currently implemented. 
+
+
+(1-4)the parameters for production and degradation in each cell type. 
+(5) the base permeability of each cell type (open_prob) 
+
+(6) If you wanted to look at different molecules you could choose a different diffusion coefficient (D_camp) 
+
+
+
+** Also, division times are something else that has a large impact. We used the experimentally determined values that Doug found during LIF withdrawal 
+However, RA-treatment does cause a decrease in proliferation.Changes to proliferation change the required production and degradation rates
+
+
+
+In terms of other parameters you can change: 
+
+
+There are two types of inhibition that you can include, either AC inhibition or GJ inhibition. (From Model_run, which modulate parts of the Simulation file)
+You can have it cyclic or constant depending on 'duration' and 'inhib_times' set during initialization.
+If you just want it to be constant though it is easier to just change the parameters above (1) and (5), respectively. 
+
+
+
+If you want to change the differentiation mechanism or the threshold value then the bottom of the simulationObjects script contains the function directing differentiation. 
+
+
+## My metrics aren't in the same order in the code as they are in the Metric Description Image. 
+
+
+
